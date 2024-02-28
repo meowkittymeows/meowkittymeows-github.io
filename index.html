@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form onsubmit="return validatePassword()">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" autocomplete="off">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error-message" style="display: none; color: red;">Incorrect password. Please try again.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="index_encrypted.js"></script>
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+
+            // Attempt to decrypt content using the provided password
+            try {
+                const decryptedContent = CryptoJS.AES.decrypt(encryptedContent, password).toString(CryptoJS.enc.Utf8);
+                document.body.innerHTML = decryptedContent;
+            } catch (error) {
+                console.log(error);
+                document.getElementById('error-message').style.display = 'block';
+                return false;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

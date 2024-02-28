@@ -1,0 +1,5 @@
+# Node stuff
+node_modules/
+
+# Project specific stuff
+decrypted_index.html

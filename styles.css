@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fcead8; /* Cute background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff69b4; /* Cute pink color */
+}
+
+.timeline {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.event {
+    margin-bottom: 40px;
+}
+
+.timestamp {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ff69b4; /* Cute pink color */
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff69b4; /* Cute pink color */
+}
+
+a {
+    color: #ff69b4; /* Cute pink color */
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.map-container,
+img {
+    max-width: 70%; /* Slightly smaller max-width for images */
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px; /* Adjust spacing between map and image */
+}
+
+.map-container {
+    max-height: 200px; /* Limit map height */
+    overflow: hidden; /* Hide overflow content */
+    margin-bottom: 10px; /* Adjust margin for map */
+}
