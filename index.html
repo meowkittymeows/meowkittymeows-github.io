@@ -26,6 +26,19 @@
             try {
                 const decryptedContent = CryptoJS.AES.decrypt(encryptedContent, password).toString(CryptoJS.enc.Utf8);
                 document.body.innerHTML = decryptedContent;
+
+                // TODO HACK: looks like this is broken and is setting it on the innerhtml, which would break the head
+                // But works for what it is
+                const script = document.createElement('script');
+                script.src = 'sakura/sakura.js';
+                script.onload = function() {
+                    // Call the function after the script is loaded
+                    new Sakura('body');
+                };
+                document.body.appendChild(script);
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = decryptedContent;
+                document.title = tempDiv.querySelector('title').textContent;
             } catch (error) {
                 console.log(error);
                 document.getElementById('error-message').style.display = 'block';
